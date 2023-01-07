@@ -18,14 +18,18 @@ tasks.addEventListener("click",(e)=>{
     if (e.target.id == "delete"){
         e.target.parentElement.parentElement.remove();
         deleteTaskFromLS(e.target.parentElement.parentElement.getAttribute("data-id"));
+        window.alert("Task Deleted .")
+        
     }
     if (e.target.parentElement.className == "card border-warning mb-3"){
         toggleTaskStates(e.target.parentElement.getAttribute("data-id"));
         e.target.parentElement.setAttribute("class","card border-secondary mb-3");
+        window.alert("Task completed, well done !")
     }
     else if (e.target.parentElement.className == "card border-secondary mb-3"){
         toggleTaskStates(e.target.parentElement.getAttribute("data-id"));
         e.target.parentElement.setAttribute("class","card border-warning mb-3");
+        window.alert("Hurry up and complete the task !")
     }
 });
 function addTaskToArray(taskText){
